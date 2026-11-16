@@ -1,0 +1,34 @@
+# Local credentials and settings
+.env
+.env.*
+!.env.example
+!.env.sample
+**/.env
+**/.env.*
+!**/.env.example
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+.pytest_cache/
+.ruff_cache/
+*.egg-info/
+
+# JavaScript/build
+node_modules/
+dist/
+build/
+coverage/
+
+# Local databases and logs
+*.db
+*.sqlite
+*.sqlite3
+*.log
+
+# Editors/OS
+.idea/
+.vscode/
+.DS_Store
+Thumbs.db
