@@ -1,8 +1,8 @@
-# Polymarket Alert Bot — MVP seguro
+# Polymarket Alert Bot — monitoramento e simulação (protótipo)
 
-Bot para monitorar carteiras públicas da Polymarket, salvar histórico, enviar alertas e exibir um dashboard web.
+Protótipo de monitoramento de atividades públicas da Polymarket, armazenamento de histórico, emissão de alertas e dashboard web. O repositório demonstra integração de APIs, backend em FastAPI e interface React; não representa uma plataforma validada para produção.
 
-> Aviso: este projeto é para alertas, análise e simulação. Não promete lucro e não é aconselhamento financeiro. O modo de copy trading real não vem ativado por padrão.
+> **Uso educacional:** este projeto é para monitoramento, análise e simulação. Não promete lucro e não constitui aconselhamento financeiro. A operação real fica desativada por padrão; não execute sem entender as configurações e os riscos.
 
 ## Estrutura
 
@@ -39,7 +39,7 @@ polymarket-alert-bot/
 ```bash
 cd backend
 python -m venv .venv
-source .venv/bin/activate  # Windows: .venv\Scripts\activate
+source .venv/bin/activate  # Windows (PowerShell): .venv\Scripts\Activate.ps1
 pip install -r requirements.txt
 cp .env.example .env
 uvicorn app.main:app --reload --port 8000
@@ -56,6 +56,13 @@ npm run dev
 ```
 
 Abra: http://localhost:5173
+
+## Segurança e escopo
+
+- Execute localmente e **não exponha a API publicamente** sem implementar autenticação, autorização, restrição de origem e revisão de segurança. As rotas administrativas deste protótipo não constituem um painel multiusuário protegido.
+- Guarde `.env` e credenciais somente na sua máquina ou no gerenciador de segredos do ambiente de execução. Um [modelo sem credenciais](backend/.env.example) acompanha o repositório.
+- As integrações de alertas exigem configuração externa; a presença do código não comprova testes em produção.
+- Dependências e configurações devem ser revisadas antes de qualquer hospedagem aberta. Não há comprovação de implantação pública ou CI neste repositório.
 
 ## Variáveis de ambiente importantes
 
